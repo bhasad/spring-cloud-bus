@@ -1,0 +1,2 @@
+org.springframework.cloud.bootstrap.BootstrapConfiguration=com.alert.AlertPropertySourceBootstrapConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.alert.AlertEventAutoConfiguration

@@ -1,0 +1,4 @@
+com\alert\AlertQuery.class
+com\alert\Alert.class
+com\alert\AlertConfigProperties.class
+com\alert\AlertEvent.class

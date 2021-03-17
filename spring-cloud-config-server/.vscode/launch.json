@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        
+
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringCloudConfigServerApplication<spring-cloud-config-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.baeldung.SpringCloudConfigServerApplication",
+            "projectName": "spring-cloud-config-server",
+            "args": "-Drun.profiles=native"
+        }
+    ]
+}

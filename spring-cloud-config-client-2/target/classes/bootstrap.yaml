@@ -1,0 +1,6 @@
+wm:
+  alerts:
+    subscriptions:
+      eon1.source1.alert1 : "false"
+      eon2.source1.alert1 : "false"
+      eon4.source2.alert1 : "false"

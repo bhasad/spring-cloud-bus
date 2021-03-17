@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "spring-cloud-config-server"
+		},
+		{
+			"path": "spring-cloud-config-client"
+		},
+		{
+			"path": "spring-cloud-config-client-2"
+		},
+		{
+			"path": "spring-cloud-config-client-3"
+		},
+		{
+			"path": "alert-eventlistener-lib"
+		},
+		{
+			"path": "alert-lib"
+		}
+	],
+	"settings": {
+		"maven.view": "hierarchical",
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}
