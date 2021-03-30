@@ -1,5 +1,5 @@
 f:\programming\tutorials-master\spring-cloud-bus\alert-eventlistener-lib\src\main\java\com\alert\AlertPropertySourceLocator.java
 f:\programming\tutorials-master\spring-cloud-bus\alert-eventlistener-lib\src\main\java\com\alert\AlertPropertySourceBootstrapConfiguration.java
-f:\programming\tutorials-master\spring-cloud-bus\alert-eventlistener-lib\src\main\java\com\alert\AlertConfigProperties.java
+f:\programming\tutorials-master\spring-cloud-bus\alert-eventlistener-lib\src\main\java\com\alert\AlertEnvironmentManager.java
 f:\programming\tutorials-master\spring-cloud-bus\alert-eventlistener-lib\src\main\java\com\alert\AlertEventListener.java
 f:\programming\tutorials-master\spring-cloud-bus\alert-eventlistener-lib\src\main\java\com\alert\AlertEventAutoConfiguration.java

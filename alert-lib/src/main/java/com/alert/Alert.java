@@ -6,7 +6,7 @@ public class Alert {
     private String source;
     private long version;
     private String name;
-    private boolean status;
+    private String status;
 
     
 
@@ -21,7 +21,7 @@ public class Alert {
         this.source = source ;
         this.name =  name;
         this.version = 0l;
-        this.status =  false;
+        this.status =  "false";
     }
 
     public void setEon(String eon)
@@ -65,24 +65,24 @@ public class Alert {
         return this.name;
     }
 
-    public void setStatus(boolean status)
+    public void setStatus(String status)
     {
         this.status = status;
     }
 
-    public boolean getStatus()
+    public String getStatus()
     {
         return this.status;
     }
 
     public String getAlertPropertyName()
     {
-        return eon+"."+source+"."+name;
+        return AlertConfigProperties.PREFIX+"."+eon+"."+source+"."+name;
     }
 
     public String getAlertPropertyValue()
     {
-        return String.valueOf(status);
+        return status;
     }
 
 }

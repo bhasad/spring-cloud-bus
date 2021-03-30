@@ -76,13 +76,13 @@ public class SpringCloudConfigClientApplication {
 
         List<Alert> alerts = new ArrayList<Alert>();
         Alert alert1 = new Alert("eon1", "source1", "alert1");
-        alert1.setStatus(true);
+        alert1.setStatus("true");
         Alert alert2 = new Alert("eon1", "source1", "alert2");
-        alert2.setStatus(true);
+        alert2.setStatus("true");
         Alert alert3 = new Alert("eon2", "source1", "alert1");
-        alert3.setStatus(false);
+        alert3.setStatus("false");
         Alert alert4 = new Alert("eon3", "source1", "alert1");
-        alert4.setStatus(true);
+        alert4.setStatus("true");
         alerts.add(alert1);alerts.add(alert2);alerts.add(alert3);alerts.add(alert4);
         return alerts;
     }

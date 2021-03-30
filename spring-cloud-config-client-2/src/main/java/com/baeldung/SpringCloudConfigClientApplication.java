@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+
+import com.alert.Alert;
+import com.alert.AlertConfigProperties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -39,14 +43,17 @@ public class SpringCloudConfigClientApplication {
     @Value("${user.password}")
     private String password;
 
-    @Value("${eon1.source1.alert1}")
+    @Value("${alerts.eon1.source1.alert1}")
     private String eon1_source1_alert1;
    
-    @Value("${eon2.source1.alert1}")
+    @Value("${alerts.eon2.source1.alert1}")
     private String eon2_source1_alert1;
     
-    @Value("${eon4.source2.alert1}")
-    private String eon4_source2_alert1;
+    @Value("${alerts.eon4.source2.alert1}")
+    private String eon4_source2_alert1; 
+
+    @Autowired
+    private AlertConfigs ac;
 
     @Autowired
     private ApplicationEventPublisher eventPublisher;
@@ -56,6 +63,14 @@ public class SpringCloudConfigClientApplication {
 
     @Autowired
     Environment env;
+
+    @Autowired
+    private AlertConfigProperties acp;
+
+    public SpringCloudConfigClientApplication()
+    {
+        System.out.println("dadad");
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(SpringCloudConfigClientApplication.class, args);
@@ -79,7 +94,18 @@ public class SpringCloudConfigClientApplication {
                             HttpMethod.POST, requestEntity,new ParameterizedTypeReference<List<Alert>>() {});
         
         List<Alert> allalerts = responseEntity.getBody(); */
+        Map<String, String> aallA = acp.getAlerts();
+        System.out.println(ac.getEon1_source1_alert1());
+        System.out.println(ac.getEon2_source1_alert1());
+        for(Alert alert : acp.getAlertObjs())
+        {
+            System.out.println(alert.getAlertPropertyName()+":"+alert.getAlertPropertyValue());
+        }
 
+        for(Entry<String,String> e : acp.getAlerts().entrySet())
+        {
+            System.out.println(e.getKey()+":"+e.getValue());
+        }
        return getAllKnownProperties(env);
        /*   return String.format( "eon1_source1_alert1 : %s eon2.source1.alert1 : %s eon4.source2.alert1 : %s.\n",
          eon1_source1_alert1, eon2_source1_alert1, eon4_source2_alert1);
@@ -91,10 +117,11 @@ public class SpringCloudConfigClientApplication {
         StringBuilder sb = new StringBuilder();
         if (env instanceof ConfigurableEnvironment) {
             for (PropertySource<?> propertySource : ((ConfigurableEnvironment) env).getPropertySources()) {
+                System.out.println(propertySource.toString());
                 if (propertySource instanceof EnumerablePropertySource) {
                     for (String key : ((EnumerablePropertySource) propertySource).getPropertyNames()) {
                         //rtn.put(key, propertySource.getProperty(key));
-                        sb.append(key).append(" : ").append(propertySource.getProperty(key)).append("\n");
+                        sb.append(propertySource.getName()).append(":").append(key).append(" : ").append(propertySource.getProperty(key)).append("\n");
                     }
                 }
             }

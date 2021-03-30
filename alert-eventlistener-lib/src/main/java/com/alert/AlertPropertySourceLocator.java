@@ -46,6 +46,9 @@ public class AlertPropertySourceLocator implements PropertySourceLocator {
         
         List<Alert> alerts = responseEntity.getBody();
         Map<String, Object> allAlertProps =  alertConfigProperties.getAlertProperties();
+
+        //set all alerts in laertconfigprops which you  got from jannus get endpoping
+        //only when version is > then whats already present in alertconfig
         
         for(Alert alert : alerts)
         {
@@ -65,7 +68,7 @@ public class AlertPropertySourceLocator implements PropertySourceLocator {
 
     private List<AlertQuery> createAlertQueries()
     {
-        Collection<Alert> alerts = alertConfigProperties.getAlerts();
+        Collection<Alert> alerts = alertConfigProperties.getAlertObjs();
         List<AlertQuery> alertQueries = new ArrayList<AlertQuery>(alerts.size());
         for(Alert alert : alerts)
         {
